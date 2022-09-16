@@ -1,0 +1,265 @@
+@charset "UTF-8";
+
+/* Propriedades que se aplicam a todos os elementos da página. */
+* {
+  /* Remove a margem externa de todos os lados do elemento. */
+  margin: 0;
+
+  /* Remove o espaçamento interno de todos os lados do elemento. */
+  padding: 0;
+
+  /* Inclui o preenchimento e a borda na largura e altura. */
+  box-sizing: border-box;
+}
+
+body {
+  /* Exibição flexível.                          */
+  /* Torna o elemento um flex container          */
+  /* e os seus elementos internos em flex-itens. */
+  display: flex;
+
+  /* Quebra de linha quando os itens não couberem na largura da tela. */
+  flex-wrap: wrap;
+
+  /* Junção de flex-grow, flex-shrink e flex-basis.  */
+  /* flex-grow – Habilidade de um flex item crescer. */
+  /* flex-shrink - Capacidade de redução do item.    */
+  /* flex-basis – Tamanho inicial do item.           */
+  flex: 1 1 100vw;
+  width: 100;
+}
+
+/* Formatação comum entre os elementos. */
+span,
+header,
+nav,
+main,
+aside,
+footer {
+  /* Cor do fundo. */
+  background: #dbb89a;
+
+  /* Exibição flexível.                          */
+  /* Torna o elemento um flex container          */
+  /* e os seus elementos internos em flex-itens. */
+  display: flex;
+
+  /* Junção de flex-grow, flex-shrink e flex-basis.  */
+  /* flex-grow – Habilidade de um flex item crescer. */
+  /* flex-shrink - Capacidade de redução do item.    */
+  /* flex-basis – Tamanho inicial do item.           */
+  flex: 1 1 100vw;
+  font-weight: bold;
+}
+
+button {
+  border: 1px solid;
+  background: #db3271;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Seletores para formatação individual. */
+span {
+  color: #dbb89a;
+}
+header {
+  font-size: 30px;
+  margin-top: 3px;
+}
+
+header #logo {
+  /* Exibição flexível.                          */
+  /* Torna o elemento um flex container          */
+  /* e os seus elementos internos em flex-itens. */
+  display: flex;
+  width: 100%;
+  margin: 5px;
+  /* Cor do fundo. */
+  background: #dbb89a;
+
+  /* Alinha os itens na vertical. */
+  justify-content: center;
+
+  /* Alinha os itens na horizontal. */
+  align-items: center;
+
+  font-weight: bold;
+
+  color: #fff;
+}
+
+#openMenu,
+#closeMenu {
+  /* Remove a borda. */
+  border: none;
+
+  /* Remove a cor de fundo. */
+  background: none;
+
+  /* Tamanho da fonte. */
+  font-size: 30px;
+
+  /* Espessura da forte. */
+  font-weight: bold;
+
+  /* Margem ao redor do elemento              */
+  /* (superior, direito, inferior e esquerdo) */
+  padding: 0px 5px 0px 5px;
+
+  color: black;
+  /* Muda o cursor do mouse para ponteiro.*/
+  cursor: pointer;
+
+  /* Oculta o elemento. */
+  display: none;
+}
+
+nav {
+  /* Alinha os itens na vertical. */
+  justify-content: center;
+
+  /* Alinha os itens na horizontal. */
+  align-items: center;
+
+  padding: 10px;
+  color: #fff;
+}
+
+nav button a {
+  /* Margem de todos os lados. */
+  display: flex;
+  padding: 5px;
+
+  /* Tamanho da fonte. */
+  font-size: 15pt;
+}
+
+nav button {
+  margin-right: 15px;
+}
+
+main {
+  background-image: url("background.png");
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 700px;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+main h3 {
+  display: flex;
+  text-align: center;
+  color: #fff;
+  align-items: center;
+  justify-content: center;
+
+}
+
+
+footer {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  background-color: #f0e9e9;
+  padding: 10px;
+}
+
+a {
+  /* Remove a decoração padrão do elemento. */
+  text-decoration: none;
+
+  /* Definir a cor da fonte para o padrão do elemento pai. */
+  color: inherit;
+}
+
+/* Altera o estilo dos elementos para serem apresentados */
+/* em telas menores que 717px. */
+@media only screen and (max-width: 717px) {
+  #openMenu,
+  #closeMenu {
+    /* Retorna a visibilidade padrão. */
+    display: block;
+  }
+
+  #openMenu {
+    /* Espaço a esquerda será preenchido automaticamente
+		   colocando os itens a direita. */
+    margin-left: auto;
+    background: #dbb89a;
+  }
+
+  #closeMenu {
+    /* Torna a posição do elemento fixa. */
+    display: flex;
+    position: fixed;
+    justify-content: flex-end;
+
+    /* Dispõe o elemento a 15px da esquerda. */
+    right: 15px;
+
+    /* Dispõe o elemento a 15px do topo. */
+    top: 15px;
+  }
+
+  nav {
+    /* Torna a posição do elemento fixa. */
+    position: fixed;
+
+    /* Dispõe os itens em coluna. */
+    flex-direction: column;
+
+    /* Ocupa 100% da largura da tela de exibição. */
+    width: 100vw;
+
+    /* Ocupa 100% da altura da tela de exibição. */
+    height: 100vh;
+
+    /* Cor em RGB, mais transparência. */
+    background: rgba(255, 255, 255, 0.8);
+
+    /* Alinha os itens na vertical. */
+    justify-content: center;
+
+    /* Alinha os itens na horizontal. */
+    align-items: center;
+
+    /* Remove a margem externa de todos os lados do elemento. */
+    margin: 0;
+
+    /* Oculta o elemento. */
+    display: none;
+
+    /* Invisivel */
+    opacity: 0;
+
+    /* Velocidade de transição de um estado para outro. */
+    transition: 0.3s;
+  }
+
+  nav a {
+    /* Margem de todos os lados. */
+
+    font-weight: bold;
+    display: flex;
+  }
+  nav button {
+    display: flex;
+    width: 90vw;
+    padding: 5px;
+    margin: 2px;
+
+  }
+
+  header {
+    display: flex;
+    text-align: center;
+    font-size: 20px;
+  }
+  /* main {
+    /* margin: 3%; */
+  
+}
